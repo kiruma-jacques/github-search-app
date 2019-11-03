@@ -1,22 +1,41 @@
-<app-form (searchTerm)='locateName($event)'></app-form>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card-body">
-                <div *ngFor = 'let myUser of myUsers'>
-                    <img class="img-thumbnail" src="{{myUser.avatar_url}}" alt="User avatar">
-                    <h3> Name : {{myUser.name}}</h3>
-                    <span> <p>Followers {{myUser.followers}} </p>    
-                    <p>Following {{myUser.following}} </p> </span> 
-                    <p>Bio: {{myUser.bio}} </p>
-                    <p>Created at {{myUser.created_at|date}}</p>
-                    <p>Last updated at : {{myUser.updated_at | date }}</p>
-                    <button>View on Github <a href="{{myUser.html_url}}" target="_blank"></a></button>
+<div class="container-fluid">
+    <app-navbar></app-navbar>
+
+    <app-form (searchTerm)='locateName($event)'></app-form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-body">
+                    <div *ngFor = 'let myUser of myUsers'>
+                        <img class="img-thumbnail" src="{{myUser.avatar_url}}" alt="User avatar">
+                        <h3> Name : {{myUser.name}}</h3>
+                        <span> <p>Followers {{myUser.followers}} </p>    
+                        <p>Following {{myUser.following}} </p> </span> 
+                        <p>Bio: {{myUser.bio}} </p>
+                        <p>Created at {{myUser.created_at|date}}</p>
+                        <p>Last updated at : {{myUser.updated_at | date }}</p>
+                        <a href="{{myUser.html_url}}" target="_blank"><button>View on Github </button></a>
+                        
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">            
-            
+
+            <div class="col-md-6">               
+                <h3>Your list of Repos</h3>      
+                <div *ngFor = 'let myRepo of myRepos'>
+                    <div *ngFor = 'let myRep of myRepo'>
+                        <div class="card card-body m-3">
+                            <p> <b>{{myRep.name}}</b> </p>
+                            <hr>
+                            <p> {{myRep.description}} </p>
+                            <p>{{myRep.forks}}</p>
+                            <p>{{myRep.language}}</p>
+                            <a href="{{myRep.html_url}}" target="_blank"><button>...go to Github</button></a>
+                        </div>
+                    </div>                
+                </div>
+            </div>
         </div>
     </div>
 </div>
