@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../user/user';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { Repos } from '../repos/repos';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class HttpServiceService {
 
   myUsers:User[];
+  myRepos: Repos[];
 
   constructor(private http: HttpClient) { 
 
@@ -40,5 +42,29 @@ export class HttpServiceService {
     })
     return promise;
   }
+
+  getRepos(searchByUser:string){
+    interface repoData{
+      name:string,
+      html_url:string,
+      description:string,
+      language:string
+    }
+
+    let promise =new Promise((resolve, reject)=>{
+      this.myRepos = [];
+      this.http.get<repoData>(this.url+searchByUser+"/repos?"+this.accessToken).toPromise().then(
+        (result)=>{
+         this.myRepos.push(result);
+         resolve();
+        },
+        (error)=>{
+          reject();
+        })
+    })
+    return promise;
+  }
 }
+
+
 
