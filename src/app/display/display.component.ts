@@ -14,7 +14,7 @@ export class DisplayComponent implements OnInit {
   constructor(private http:HttpServiceService) { }
 
   ngOnInit() {
-    
+    this.locateName('jakesIII');
   }
 
   locateName(searchByUser){

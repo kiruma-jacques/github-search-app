@@ -1,5 +1,12 @@
 <app-form (searchTerm)='locateName($event)'></app-form>
 
-<div >
-
+<div *ngFor = 'let myUser of myUsers'>
+    <img class="img-thumbnail" src="{{myUser.avatar_url}}" alt="">
+    <h3> Name : {{myUser.name}}</h3>
+    <p>Followers {{myUser.followers}} </p>    
+    <p>Following {{myUser.following}} </p>
+    <p>Bio: {{myUser.bio}} </p>
+    <p>Created at {{myUser.created_at|date}}</p>
+    <p>Last updated at : {{myUser.updated_at | date }}</p>
+    <button>View on Github <a href="{{myUser.repos_url}}" target="_blank"></a></button>
 </div>
