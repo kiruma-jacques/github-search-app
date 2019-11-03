@@ -13,7 +13,6 @@ export class FormComponent implements OnInit {
 
   searchName(){
     this.searchTerm.emit(this.searchByUser);
-    console.log(this.searchByUser)
   }
   constructor() { }
 
