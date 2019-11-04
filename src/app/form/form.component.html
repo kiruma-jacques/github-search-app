@@ -1,6 +1,8 @@
-<div class="container m-4">
-    <form class="form-group">
+<div class="container-fluid">
+    <form class="form-inline text-center">
         <input type="text" class="form-control" name="searchByUser" [(ngModel)]="searchByUser" placeholder="Search">
-        <button class="btn btn-primary mt-2" (click)="searchName()">Search</button>
+        <div class="">
+            <button class="btn btn-primary m-4" (click)="searchName()">Search</button>
+        </div>
     </form>
 </div>

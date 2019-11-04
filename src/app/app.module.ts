@@ -9,6 +9,8 @@ import { DisplayComponent } from './display/display.component';
 import { FormComponent } from './form/form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LastUpdatePipe } from './pipe/last-update.pipe';
+import { RepositoryComponent } from './repository/repository.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     DisplayComponent,
     FormComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    LastUpdatePipe,
+    RepositoryComponent
   ],
   imports: [
     BrowserModule,

@@ -3,25 +3,31 @@
 
     <app-form (searchTerm)='locateName($event)'></app-form>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="card-body">
                     <div *ngFor = 'let myUser of myUsers'>
-                        <img class="img-thumbnail" src="{{myUser.avatar_url}}" alt="User avatar">
-                        <h3> Name : {{myUser.name}}</h3>
-                        <span> <p>Followers {{myUser.followers}} </p>    
-                        <p>Following {{myUser.following}} </p> </span> 
-                        <p>Bio: {{myUser.bio}} </p>
-                        <p>Created at {{myUser.created_at|date}}</p>
-                        <p>Last updated at : {{myUser.updated_at | date }}</p>
-                        <a href="{{myUser.html_url}}" target="_blank"><button>View on Github </button></a>
+                        <div class="row">
+                            <img class="img-thumbnail" src="{{myUser.avatar_url}}" alt="User avatar">
+                            <div class="card-body text-center">
+                                <h3>{{myUser.name}}</h3>
+                                <div class="d-inline">
+                                    <p>Followers <br> {{myUser.followers}} </p>    
+                                    <p>Following <br> {{myUser.following}} </p>
+                                </div>
+                                <hr>
+                                <p> <b class="mb-4">Bio</b> <br> {{myUser.bio}} </p>
+                            </div>
+                        </div>                                               
+                        <p>Last updated {{myUser.updated_at | lastUpdate }}</p>
+                        <a href="{{myUser.html_url}}" target="_blank"><button class="btn btn-primary">View on Github </button></a>
                         
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6">               
+            <div class="col-md-7">               
                 <h3>Your list of Repos</h3>      
                 <div *ngFor = 'let myRepo of myRepos'>
                     <div *ngFor = 'let myRep of myRepo'>
@@ -31,7 +37,7 @@
                             <p> {{myRep.description}} </p>
                             <p>{{myRep.forks}}</p>
                             <p>{{myRep.language}}</p>
-                            <a href="{{myRep.html_url}}" target="_blank"><button>...go to Github</button></a>
+                            <a href="{{myRep.html_url}}" target="_blank"><button class="btn btn-primary">...go to Github</button></a>
                         </div>
                     </div>                
                 </div>
