@@ -30,7 +30,8 @@ import { HoverDirective } from './directive/hover.directive';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

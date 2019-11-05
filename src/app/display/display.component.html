@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <app-navbar></app-navbar>
+    
 
     <app-form (searchTerm)='locateName($event)'></app-form>
 
@@ -31,7 +31,7 @@
                 <h3>Repositories</h3>      
                 <div class="repos" *ngFor = 'let myRepo of myRepos'>
                     <div *ngFor = 'let myRep of myRepo'>
-                        <div class="card card-body m-3">
+                        <div class="card card-body m-3 transparent" appHover>
                             <p> <b>{{myRep.name}}</b></p>
                             <hr>
                             <p> {{myRep.description}} </p>

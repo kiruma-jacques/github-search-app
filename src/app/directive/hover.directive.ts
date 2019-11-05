@@ -8,7 +8,7 @@ export class HoverDirective {
   constructor( private elem:ElementRef) { }
 
   @HostListener("mouseenter") onMouseEnter() {
-    this.overlay("rgba(0,0,0,0.3)");
+    this.overlay("rgba(110, 126, 141, 0.527)");
   }
 
   @HostListener("mouseleave") onMouseLeave() {
