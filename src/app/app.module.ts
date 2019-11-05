@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LastUpdatePipe } from './pipe/last-update.pipe';
 import { RepositoryComponent } from './repository/repository.component';
 import { HoverEffectDirective } from './hover-effect.directive';
+import { HoverDirective } from './directive/hover.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HoverEffectDirective } from './hover-effect.directive';
     NavbarComponent,
     LastUpdatePipe,
     RepositoryComponent,
-    HoverEffectDirective
+    HoverEffectDirective,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
