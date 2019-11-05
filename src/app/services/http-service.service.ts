@@ -53,7 +53,7 @@ export class HttpServiceService {
 
     let promise =new Promise((resolve, reject)=>{
       this.myRepos = [];
-      this.http.get<repoData>(this.url+searchByUser+"/repos?"+this.accessToken).toPromise().then(
+      this.http.get<repoData>(this.url+searchByUser+"/repos"+this.accessToken).toPromise().then(
         (result)=>{
          this.myRepos.push(result);
          resolve();

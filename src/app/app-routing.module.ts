@@ -6,10 +6,10 @@ import { RepositoryComponent } from './repository/repository.component';
 
 
 const routes: Routes = [
-  {path:'home', component: DisplayComponent},
-  // {path:"**", component: NotFoundComponent },
+  {path:'', component: DisplayComponent},
+  {path:"**", component: NotFoundComponent },
   {path: '', redirectTo:'home', pathMatch: 'full'},
-  {path: 'repos', component: RepositoryComponent}
+  // {path: 'repos', component: RepositoryComponent}
   
 ];
 

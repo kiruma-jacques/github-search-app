@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-5 sticky">
                 <div class="card-body">
                     <div *ngFor = 'let myUser of myUsers'>
                         <div class="row">
@@ -17,7 +17,7 @@
                                     <p>Following <br> {{myUser.following}} </p>
                                 </div>
                                 <hr>
-                                <p> <b class="mb-4">Bio</b> <br> {{myUser.bio}} </p>
+                                <p> <b class="mb-4">Bio</b> <br class="m-4"> {{myUser.bio}} </p>
                             </div>
                         </div>                                               
                         <p>Last updated {{myUser.updated_at | lastUpdate }}</p>
@@ -28,8 +28,8 @@
             </div>
 
             <div class="col-md-7">               
-                <h3>Your list of Repos</h3>      
-                <div *ngFor = 'let myRepo of myRepos'>
+                <h3>Repositories</h3>      
+                <div class="repos" *ngFor = 'let myRepo of myRepos'>
                     <div *ngFor = 'let myRep of myRepo'>
                         <div class="card card-body m-3">
                             <p> <b>{{myRep.name}}</b> </p>
