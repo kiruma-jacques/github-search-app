@@ -11,6 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LastUpdatePipe } from './pipe/last-update.pipe';
 import { RepositoryComponent } from './repository/repository.component';
+import { HoverEffectDirective } from './hover-effect.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RepositoryComponent } from './repository/repository.component';
     NotFoundComponent,
     NavbarComponent,
     LastUpdatePipe,
-    RepositoryComponent
+    RepositoryComponent,
+    HoverEffectDirective
   ],
   imports: [
     BrowserModule,
